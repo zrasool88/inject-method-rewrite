@@ -25,4 +25,27 @@ describe Array do
       expect(arr.pinject { |x, y| x + y }).to eq(24)
     end
   end
+
+  context 'works with syntactic sugar' do
+    it ':+ results in addition' do
+      expect(arr.pinject(:+)).to eq(24)
+    end
+
+    it ':- results in subtraction' do
+      expect(arr.pinject(:-)).to eq(-20)
+    end
+
+    it ':* results in multiplication' do
+      expect(arr.pinject(:*)).to eq(1000)
+    end
+
+    it ':/ results in division' do
+      expect(arr.pinject(:/)).to eq(0)
+    end
+  end
+
+  context 'convert enumerables to objects' do
+    it '' do
+    end
+  end
 end
