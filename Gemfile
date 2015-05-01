@@ -7,5 +7,5 @@ end
 
 group :development do
   gem 'rubocop', require: false
-  gem 'rubocop-spec',
+  gem 'rubocop-rspec'
 end

@@ -1,1 +1,5 @@
-require: rubocop-spec
+require: rubocop-rspec
+
+Style/Documentation:
+  Description: Document classes and non-namespace modules.
+  Enabled: false
