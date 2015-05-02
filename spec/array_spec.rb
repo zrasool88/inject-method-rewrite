@@ -44,8 +44,24 @@ describe Array do
     end
   end
 
-  context 'convert enumerables to objects' do
-    it '' do
+  context 'string operations' do
+    let(:sentence) { ['These ', 'words ', 'shall ', 'be ', 'concatonated'] }
+
+    it 'concatonates strings' do
+      expect(sentence.pinject do |sentence, word|
+        sentence + word
+      end).to eq('These words shall be concatonated')
+    end
+  end
+
+  context 'converts between types of enumerables' do
+    let(:hash) { [[:first_name, 'Zeeshan'], [:last_name, 'Rasool']] }
+
+    it 'converts nested array into hash' do
+      expect(hash.pinject({}) do |accumulator, element|
+        accumulator[element.first] = element.last
+        accumulator
+      end).to eq(first_name: 'Zeeshan', last_name: 'Rasool')
     end
   end
 end
