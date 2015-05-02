@@ -2,7 +2,7 @@ language: ruby
 cache: bundler
 rvm:
  - 2.2.1
-script: bundle exec spec
+script: bundle exec rspec
 addons:
   code_climate:
-    repo_token: 
+    repo_token: 86400ce273e57f702614e410a60a3ef858b1c0e6b0cafabf568e59cf3dfb237c
