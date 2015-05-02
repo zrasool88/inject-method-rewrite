@@ -12,10 +12,16 @@ Second of two challenges assigned for week 2 @ Makers Academy. Re-writing ruby's
 1. Clone the repo
 2. Load the array.rb file in irb using the command:
     require './lib/array.rb'
-3. create a new array of objects
-4. call the pinject method on the array as you would the inject method
+3. Create a new array of objects
+4. Call the pinject method on the array as you would the inject method
 
 #How to test
 
 1. Run 'bundle install'
 2. Run 'bundle exec rspec'
+
+#What I learned
+
+1. What &method and &block does
+2. What the to_proc method does
+3. How the inject method does its magic
