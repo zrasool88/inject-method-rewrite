@@ -8,4 +8,5 @@ end
 group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rspec'
+  gem 'preek'
 end
