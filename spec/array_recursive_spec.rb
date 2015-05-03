@@ -7,11 +7,11 @@ describe Array do
   context 'recursive pinject' do
     context 'arithmetic operations' do
       it 'adds integers in an array' do
-        expect(arr.pinject_recursive(0) { |x, y| x + y }).to eq(24)
+        expect(arr.pinject_recursive(10) { |x, y| x + y }).to eq(34)
       end
 
       it 'subtracts integers in an array' do
-        expect(arr.pinject_recursive(0) { |x, y| x - y }).to eq(-24)
+        expect(arr.pinject_recursive(10) { |x, y| x - y }).to eq(-14)
       end
 
       it 'multiplies integers in an array' do

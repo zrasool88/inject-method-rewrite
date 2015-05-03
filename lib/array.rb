@@ -8,10 +8,8 @@ class Array
   def pinject_recursive(*args, &block)
     block = args[0].to_proc if args[0].is_a? Symbol
     accumulator = assign_accumulator(*args)
-    forwardvalue = assign_forward_value(*args)
-    return accumulator if self.empty?
-    accumulator = block.call(accumulator, self[forwardvalue])
-    self.drop(1).pinject_recursive(accumulator, args, &block)
+    forwardvalue = 0
+    run_it_recursively(accumulator, forwardvalue, *args, &block)
   end
 
   private
@@ -29,11 +27,9 @@ class Array
     accumulator
   end
 
-  def assign_forward_value(*args)
-    if args.empty? || args[0].is_a?(Symbol)
-      forwardvalue = 0
-    else
-      forwardvalue = 0
-    end
+  def run_it_recursively(accumulator, forwardvalue, *args, &block)
+    return accumulator if self.empty?
+    accumulator = block.call(accumulator, self[forwardvalue])
+    self.drop(1).pinject_recursive(accumulator, args, &block)
   end
 end
